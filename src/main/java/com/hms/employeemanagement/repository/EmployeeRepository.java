@@ -47,4 +47,8 @@ public interface EmployeeRepository extends CrudRepository<Employee, EmployeeID>
     )
     void deleteById(@Param("employeeId") long employeeId ,@Param("departmentId") int departmentId);
 
+
+
+    @Query(value = "SELECT * FROM employee WHERE employee_id=:employee_id",nativeQuery = true)
+    Employee findEmployeeByEmployeeID(@Param("employee_id") long employeeID);
 }

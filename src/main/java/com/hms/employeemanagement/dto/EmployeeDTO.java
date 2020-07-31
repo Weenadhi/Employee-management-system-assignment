@@ -1,6 +1,9 @@
 package com.hms.employeemanagement.dto;
 
 
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class EmployeeDTO {
@@ -14,8 +17,8 @@ public class EmployeeDTO {
     public String email;
     public String mobileNumber;
     public String nic;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     public Date joinedDate;
-
 
     public long getEmployeeID() {
         return employeeID;
@@ -38,7 +41,7 @@ public class EmployeeDTO {
     }
 
     public void setName(String name) {
-        name = name;
+        this.name = name;
     }
 
     public int getAge() {
